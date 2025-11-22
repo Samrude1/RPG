@@ -1,31 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RPG - Dragon Repeller</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div id="game">
-      <div id="stats">
-        <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RPG - Dragon Repeller</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div id="game">
+    <div id="stats">
+      <span class="stat">Level: <strong><span id="levelText">1</span></strong></span>
+      <span class="stat">XP: <strong><span id="xpText">0</span></strong></span>
+      <div class="health-container">
         <span class="stat">Health: <strong><span id="healthText">100</span></strong></span>
-        <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+        <div class="bar-bg">
+          <div id="healthBar" class="bar-fill"></div>
+        </div>
       </div>
-      <div id="controls">
-        <button id="button1">Go to store</button>
-        <button id="button2">Go to cave</button>
-        <button id="button3">Fight dragon</button>
-      </div>
-      <div id="monsterStats">
-        <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
-        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
-      </div>
-      <div id="text">
-        Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in the town square. Where do you want to go? Use the buttons above.
+      <span class="stat">Mana: <strong><span id="manaText">50</span></strong></span>
+      <span class="stat">Gold: <strong><span id="goldText">50</span></strong></span>
+    </div>
+    <div id="controls">
+      <button id="button1">Go to store</button>
+      <button id="button2">Explore...</button>
+      <button id="button3">Quest Board</button>
+      <button id="button4" style="display:none;">Back</button>
+      <button id="saveButton">Save</button>
+      <button id="loadButton">Load</button>
+      <button id="invButton" onclick="toggleInventory()">Inventory</button>
+    </div>
+    <div id="inventoryModal" class="modal" style="display: none;">
+      <div class="modal-content">
+        <span class="close" onclick="toggleInventory()">&times;</span>
+        <h2>Inventory</h2>
+        <div id="inventoryList"></div>
       </div>
     </div>
-    <script src="script.js"></script>
-  </body>
+    <div id="questContainer" style="margin-top: 10px; padding: 10px; border: 1px solid #fff;">
+      <strong>Current Quest:</strong> <span id="questText">None</span>
+    </div>
+    <div id="monsterStats">
+      <span class="stat">Monster Name: <strong><span id="monsterName"></span></strong></span>
+      <div class="health-container">
+        <span class="stat">Health: <strong><span id="monsterHealth"></span></strong></span>
+        <div class="bar-bg">
+          <div id="monsterBar" class="bar-fill" style="background-color: #ff4444;"></div>
+        </div>
+      </div>
+    </div>
+    <div id="text">
+      Welcome to Dragon Repeller. You must defeat the dragon that is preventing people from leaving the town. You are in
+      the town square. Where do you want to go? Use the buttons above.
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
 </html>
