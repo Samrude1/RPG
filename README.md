@@ -2,6 +2,8 @@
 
 A feature-rich text-based RPG built with HTML, CSS, and vanilla JavaScript. Originally a simple learning project, it has been massively expanded into a full-fledged medieval adventure game.
 
+![Dragon Repeller Screenshot](images/screenshot.png)
+
 ## Features
 
 ### Core Gameplay
